@@ -22,10 +22,11 @@ syntax on
 
 silent :source ~/.vim/bundle/vim-ide/plugin/su-func.vim
 
-map		<special> <silent> <F1> :call Quit()<CR>" ---Quit
-map		<special> <silent> <F2> :call ContentReload()<CR>" ---Quit
-map		<special> <silent> <F3> :call OpenShell()<CR>" ---Shell
-map		<special> <silent> <F4> :call OpenTaskMgr()<CR>" ---TaskMgr
+"map		<special> <silent> <F1> :call Quit()<CR>" ---Quit
+"map		<special> <silent> <F2> :call ContentReload()<CR>" ---Quit
+"map		<special> <silent> <F3> :call OpenShell()<CR>" ---Shell
+"map		<special> <silent> <F4> :call OpenTaskMgr()<CR>" ---TaskMgr
+nnoremap <silent> <F1> :call Quit()<CR>" ---Quit
 nnoremap <silent> <F5> :GoRun<CR>
 nnoremap <silent> <F6> :GoTest<CR>
 nnoremap <silent> <F7> :PluginInstall<CR>
