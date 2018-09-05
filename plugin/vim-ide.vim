@@ -20,7 +20,7 @@ syntax on
 
 "colo molokai
 
-silent :source su-func.vim
+silent :source ~/.vim/bundle/vim-ide/plugin/su-func.vim
 
 map		<special> <silent> <F1> :call Quit()<CR>" ---Quit
 map		<special> <silent> <F2> :call ContentReload()<CR>" ---Quit
