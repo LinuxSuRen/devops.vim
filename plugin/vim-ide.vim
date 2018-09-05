@@ -20,7 +20,21 @@ syntax on
 
 "colo molokai
 
+silent :source su-func.vim
+
 map		<special> <silent> <F1> :call Quit()<CR>" ---Quit
-nnoremap <silent> <F3> :PluginInstall<CR>
+map		<special> <silent> <F2> :call ContentReload()<CR>" ---Quit
+map		<special> <silent> <F3> :call OpenShell()<CR>" ---Shell
+map		<special> <silent> <F4> :call OpenTaskMgr()<CR>" ---TaskMgr
 nnoremap <silent> <F5> :GoRun<CR>
 nnoremap <silent> <F6> :GoTest<CR>
+nnoremap <silent> <F7> :PluginInstall<CR>
+map		<special> <silent> <F10> :call ReloadRc()<CR>" ---Reload RcFile
+map		<special> <silent> <F11> :call ToggleFullScreen()<CR>" ---FullScreen
+map		<special> <silent> <F12> :call EditRc()<CR>" ---Edit RcFile
+
+map		<special> <silent> <C-S> :call Save()<CR>" ---Save
+map		<special> <silent> <C-Tab> :call SwitchWin()<CR>" ---SwitchWin
+
+imap	<special> <silent> <C-S> <ESC>:write<CR>a
+imap	<special> <silent> <C-Tab> <ESC><C-W><C-W>a
