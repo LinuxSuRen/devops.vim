@@ -10,6 +10,7 @@ set autowrite
 set ruler
 set showmatch
 set path+=**
+set wildmenu
 
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
