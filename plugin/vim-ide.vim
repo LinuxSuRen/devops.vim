@@ -9,6 +9,7 @@ set expandtab
 set autowrite
 set ruler
 set showmatch
+set path+=**
 
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
