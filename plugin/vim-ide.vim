@@ -41,6 +41,9 @@ map		<special> <silent> <C-Tab> :call SwitchWin()<CR>" ---SwitchWin
 
 imap	<special> <silent> <C-S> <ESC>:write<CR>a
 imap	<special> <silent> <C-Tab> <ESC><C-W><C-W>a
+nnoremap <C-S> :w<CR>
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-M> :tabNext<CR>
 
 " make
 autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
