@@ -311,7 +311,10 @@ function! Su()
 endfunction
 
 function! ExecMakefile()
-  echo "sefe"
   let cmd=Su()
   execute "!make " . cmd
+endfunction
+
+function! ExecDockerfile()
+  execute "!docker build ."
 endfunction

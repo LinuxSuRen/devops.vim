@@ -51,3 +51,6 @@ autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
 " golang
 autocmd FileType go nnoremap <buffer> <F5> :GoRun<CR>
 autocmd FileType go nnoremap <buffer> <F6> :GoTest<CR>
+
+" dockerfile
+autocmd FileType dockerfile nnoremap <buffer> <F5> :call ExecDockerfile()<CR>
