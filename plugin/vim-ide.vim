@@ -28,10 +28,10 @@ silent :source ~/.vim/bundle/vim-ide/plugin/su-func.vim
 "map		<special> <silent> <F2> :call ContentReload()<CR>" ---Quit
 "map		<special> <silent> <F3> :call OpenShell()<CR>" ---Shell
 "map		<special> <silent> <F4> :call OpenTaskMgr()<CR>" ---TaskMgr
+"nnoremap <silent> <F7> :PluginInstall<CR>
+"
 nnoremap <silent> <F1> :call Quit()<CR>" ---Quit
-"nnoremap <silent> <F5> :GoRun<CR>
-nnoremap <silent> <F6> :GoTest<CR>
-nnoremap <silent> <F7> :PluginInstall<CR>
+nnoremap <silent> <F2> :lcd %:p:h<CR>
 map		<special> <silent> <F10> :call ReloadRc()<CR>" ---Reload RcFile
 map		<special> <silent> <F11> :call ToggleFullScreen()<CR>" ---FullScreen
 map		<special> <silent> <F12> :call EditRc()<CR>" ---Edit RcFile
@@ -42,5 +42,9 @@ map		<special> <silent> <C-Tab> :call SwitchWin()<CR>" ---SwitchWin
 imap	<special> <silent> <C-S> <ESC>:write<CR>a
 imap	<special> <silent> <C-Tab> <ESC><C-W><C-W>a
 
+" make
 autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
+
+" golang
 autocmd FileType go nnoremap <buffer> <F5> :GoRun<CR>
+autocmd FileType go nnoremap <buffer> <F6> :GoTest<CR>
