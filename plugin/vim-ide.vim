@@ -29,7 +29,7 @@ silent :source ~/.vim/bundle/vim-ide/plugin/su-func.vim
 "map		<special> <silent> <F3> :call OpenShell()<CR>" ---Shell
 "map		<special> <silent> <F4> :call OpenTaskMgr()<CR>" ---TaskMgr
 nnoremap <silent> <F1> :call Quit()<CR>" ---Quit
-nnoremap <silent> <F5> :GoRun<CR>
+"nnoremap <silent> <F5> :GoRun<CR>
 nnoremap <silent> <F6> :GoTest<CR>
 nnoremap <silent> <F7> :PluginInstall<CR>
 map		<special> <silent> <F10> :call ReloadRc()<CR>" ---Reload RcFile
@@ -41,3 +41,6 @@ map		<special> <silent> <C-Tab> :call SwitchWin()<CR>" ---SwitchWin
 
 imap	<special> <silent> <C-S> <ESC>:write<CR>a
 imap	<special> <silent> <C-Tab> <ESC><C-W><C-W>a
+
+autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
+autocmd FileType go nnoremap <buffer> <F5> :GoRun<CR>

@@ -300,3 +300,18 @@ function! Save()
 		execute ":write"
 	endif
 endfunction
+
+function! Su()
+  echo col('.')
+  echo getline(col('.'))
+  echo getline('.')
+  echo IndexOf(getline('.'), ":")
+  echo SubString(getline('.'), 0, IndexOf(getline('.'), ":"))
+  return SubString(getline('.'), 0, IndexOf(getline('.'), ":"))
+endfunction
+
+function! ExecMakefile()
+  echo "sefe"
+  let cmd=Su()
+  execute "!make " . cmd
+endfunction
