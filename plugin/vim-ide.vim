@@ -1,4 +1,7 @@
+" Section: Documentation {{{1
+
 set number
+set relativenumber
 set hlsearch
 set ignorecase
 set incsearch
@@ -45,6 +48,9 @@ nnoremap <C-S> :w<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-M> :tabNext<CR>
 
+nnoremap ev :split $MYVIMRC<cr>
+nnoremap sv :source $MYVIMRC<cr>
+
 " make
 autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
 
@@ -54,3 +60,41 @@ autocmd FileType go nnoremap <buffer> <F6> :GoTest<CR>
 
 " dockerfile
 autocmd FileType dockerfile nnoremap <buffer> <F5> :call ExecDockerfile()<CR>
+
+" Section: Properties
+
+if (!exists("g:Properties"))
+  let g:Properties = "*.properties"
+endif
+
+augroup Properties
+  "autocmd!
+
+  ":set verbose=9
+  "exe "autocmd BufReadCmd " . g:Properties . " call s:PropertiesInit(1) | call s:PropertiesDecrypt(1)"
+augroup END
+
+" Function: s:PropertiesInit(bufread)
+"
+" initialize plugin
+function s:PropertiesInit(bufread)
+endfunction
+
+" Function: s:PropertiesDecrypt(bufread)
+"
+" decrypt properties file
+function s:PropertiesDecrypt(bufread)
+  let filename = resolve(expand("<afile>:p"))
+  echom 'filename' . filename
+  let autocmd_filename = fnamemodify(filename, ':r')
+  echom 'autocmd_filename' . autocmd_filename
+  let destname = tempname()
+  call system('native2ascii -reverse ' . filename . ' > ' . destname)
+  "exe ':doautocmd FileWritePost ' . destname
+  set buftype=acwrite
+  exe 'file' fnameescape(filename)
+  execute ':doautocmd BufReadPre ' . fnameescape(autocmd_filename)
+endfunction
+
+iabbrev adn and
+iabbrev @@ zxjlwt@126.com

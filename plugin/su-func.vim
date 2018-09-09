@@ -7,6 +7,7 @@ endif
 function! EditRc()
 	if "" == expand("%:p")
 		:edit ~/.vimrc
+		":edit $MYVIMRC
 	elseif ".vimrc" != expand("%:t")
 		:split ~/.vimrc
 	endif
