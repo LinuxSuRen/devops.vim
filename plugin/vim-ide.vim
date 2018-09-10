@@ -75,6 +75,7 @@ autocmd FileType yaml nnoremap <buffer> <F5> :call K8sApply()<CR>
 
 " k8s
 autocmd BufNewFile *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
+autocmd BufRead *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
 autocmd FileType k8s nnoremap <buffer> <F5> :call ExecCurrentRow()<CR>
 
 
