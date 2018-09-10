@@ -51,12 +51,16 @@ nnoremap <C-M> :tabNext<CR>
 nnoremap ev :split $MYVIMRC<cr>
 nnoremap sv :source $MYVIMRC<cr>
 
+" vim
+autocmd FileType vim nnoremap <buffer> <leader>c I"<esc>
+
 " make
 autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
 
 " golang
 autocmd FileType go nnoremap <buffer> <F5> :GoRun<CR>
 autocmd FileType go nnoremap <buffer> <F6> :GoTest<CR>
+autocmd FileType go nnoremap <buffer> <leader>c I//<esc>
 
 " dockerfile
 autocmd FileType dockerfile nnoremap <buffer> <F5> :call ExecDockerfile()<CR>
@@ -72,12 +76,13 @@ endfunction
 
 " yaml
 autocmd FileType yaml nnoremap <buffer> <F5> :call K8sApply()<CR>
+autocmd FileType yaml nnoremap <buffer> <leader>c I#<esc>
 
 " k8s
 autocmd BufNewFile *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
 autocmd BufRead *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
 autocmd FileType k8s nnoremap <buffer> <F5> :call ExecCurrentRow()<CR>
-
+autocmd FileType k8s nnoremap <buffer> <cr> :call ExecCurrentRow()<CR>
 
 " Section: Properties
 
