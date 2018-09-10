@@ -61,6 +61,23 @@ autocmd FileType go nnoremap <buffer> <F6> :GoTest<CR>
 " dockerfile
 autocmd FileType dockerfile nnoremap <buffer> <F5> :call ExecDockerfile()<CR>
 
+function! K8sApply()
+  :!kubectl apply -f %
+endfunction
+
+function! ExecCurrentRow()
+  let res = system(getline("."))
+  echo res
+endfunction
+
+" yaml
+autocmd FileType yaml nnoremap <buffer> <F5> :call K8sApply()<CR>
+
+" k8s
+autocmd BufNewFile *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
+autocmd FileType k8s nnoremap <buffer> <F5> :call ExecCurrentRow()<CR>
+
+
 " Section: Properties
 
 if (!exists("g:Properties"))
