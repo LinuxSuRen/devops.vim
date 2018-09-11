@@ -17,3 +17,5 @@ syntax keyword k8sResources all certificatesigningrequests csr clusterrolebindin
 highlight link k8sCmd Function
 highlight link k8sSubCmd Keyword
 highlight link k8sResources String
+
+let b:current_syntax = "k8s"
