@@ -14,6 +14,7 @@ set ruler
 set showmatch
 set path+=**
 set wildmenu
+set dictionary+=/usr/share/dict/words
 
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
