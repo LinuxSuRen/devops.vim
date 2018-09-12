@@ -1,5 +1,7 @@
 # vim-ide
 
+You need setup [VundleVim](https://github.com/VundleVim/Vundle.vim) first.
+
 # .vimrc
 
 Suggestion configuration:
