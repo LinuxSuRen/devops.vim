@@ -319,3 +319,26 @@ endfunction
 function! ExecDockerfile()
   execute "!docker build ."
 endfunction
+
+function! ConsoleView(text)
+  if exists("s:view") && bufloaded("s:view")
+    exec s:view . "bd!"
+  endif
+
+  exec 'silent pedit [DevOps Console] '
+  wincmd P | wincmd H
+
+  let s:view = bufnr('%')
+  set modifiable
+
+  for line in a:text
+    call append(0, line)
+  endfor
+
+  setl buftype=nofile
+  setl noswapfile
+  set bufhidden=wipe
+
+  setl cursorline
+  setl nonu ro noma
+endfunction

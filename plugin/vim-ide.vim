@@ -61,8 +61,10 @@ function! K8sApply()
 endfunction
 
 function! ExecCurrentRow()
-  let res = system(getline("."))
-  echo res
+  let res = systemlist(getline("."))
+  call ConsoleView(res)
+  execute "normal gg"
+  call SwitchWin()
 endfunction
 
 " yaml
