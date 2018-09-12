@@ -16,11 +16,6 @@ set path+=**
 set wildmenu
 set dictionary+=/usr/share/dict/words
 
-call plug#begin()
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-call plug#end()
-
 "execute pathogen#infect()
 syntax on
 
@@ -58,13 +53,6 @@ autocmd FileType vim nnoremap <buffer> <leader>c I"<esc>
 " make
 autocmd FileType make nnoremap <buffer> <F5> :call ExecMakefile()<CR>
 
-" golang
-augroup golangGroup
-  autocmd FileType go nnoremap <buffer> <F5> :GoRun<CR>
-  autocmd FileType go nnoremap <buffer> <F6> :GoTest<CR>
-  autocmd FileType go nnoremap <buffer> <leader>c I//<esc>
-augroup END
-
 " dockerfile
 autocmd FileType dockerfile nnoremap <buffer> <F5> :call ExecDockerfile()<CR>
 
@@ -80,14 +68,6 @@ endfunction
 " yaml
 autocmd FileType yaml nnoremap <buffer> <F5> :call K8sApply()<CR>
 autocmd FileType yaml nnoremap <buffer> <leader>c I#<esc>
-
-" k8s
-augroup k8sGroup
-  autocmd BufNewFile *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
-  autocmd BufRead *.k8s setfiletype k8s | setlocal fileencoding=utf-8 fileformat=unix
-  autocmd FileType k8s nnoremap <buffer> <F5> :call ExecCurrentRow()<CR>
-  autocmd FileType k8s nnoremap <buffer> <cr> :call ExecCurrentRow()<CR>
-augroup END
 
 " Section: Properties
 
