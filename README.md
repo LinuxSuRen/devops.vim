@@ -19,7 +19,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'linuxsuren/vim-ide'
+Plugin 'linuxsuren/devops.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
