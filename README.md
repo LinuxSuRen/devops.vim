@@ -28,7 +28,7 @@ Plugin 'christianrondeau/vim-base64'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'shumphrey/fugitive-gitlab.vim'
-Plugin 'tommcdo/vim-fubitive'
+Plugin 'linuxsuren/fugitive-bitbucket.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
