@@ -87,13 +87,13 @@ augroup END
 " Function: s:PropertiesInit(bufread)
 "
 " initialize plugin
-function s:PropertiesInit(bufread)
+function! s:PropertiesInit(bufread)
 endfunction
 
 " Function: s:PropertiesDecrypt(bufread)
 "
 " decrypt properties file
-function s:PropertiesDecrypt(bufread)
+function! s:PropertiesDecrypt(bufread)
   let filename = resolve(expand("<afile>:p"))
   echom 'filename' . filename
   let autocmd_filename = fnamemodify(filename, ':r')
