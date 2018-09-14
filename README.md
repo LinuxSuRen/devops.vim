@@ -20,11 +20,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'linuxsuren/devops.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'christianrondeau/vim-base64'
+
+" git wrapper
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'shumphrey/fugitive-gitlab.vim'
+Plugin 'tommcdo/vim-fubitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
