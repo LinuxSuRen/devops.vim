@@ -15,7 +15,7 @@ set showmatch
 set path+=**
 set wildmenu
 set dictionary+=/usr/share/dict/words
-set invlist
+"set invlist
 
 "execute pathogen#infect()
 syntax on
